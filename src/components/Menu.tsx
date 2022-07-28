@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import HomeIcon from '@mui/icons-material/Home';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ExploreIcon from '@mui/icons-material/Explore';
 import SettingsIcon from "@mui/icons-material/Settings";
 import HistoryIcon from "@mui/icons-material/History";
@@ -24,6 +25,9 @@ const Container = styled.div`
   height: 100vh;
   color: white;
   font-size: 1em;
+  position: sticky;
+  top: 0;
+  // Placing it on the same top and making scrollable with the entire content
 `;
 
 const Wrapper = styled.div`
@@ -53,6 +57,21 @@ const Item = styled.div`
 const Hr = styled.hr`
   margin: 1rem 0rem;
   border: 0.5px solid grayscale;
+`;
+
+const Login = styled.div``;
+
+const Button = styled.button`
+  padding: 5px 15px;
+  background-color: transparent;
+  border: 1px solid #3ea6ff;
+  color: #3ea6ff;
+  border-radius: 3px;
+  margin-top: 1.5em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 `;
 
 const Menu = () => {
@@ -92,11 +111,17 @@ const Menu = () => {
           <ThumbUpIcon />
           Liked videos
         </Item>
+        <Hr />
+        <Login>
+          Sign in to like videos, comment and subscribe.
+          <Button><AccountCircleOutlinedIcon />SIGN IN</Button>
+        </Login>
+        
+        <Hr />
         <Item>
           <SettingsIcon />
           Settings
         </Item>
-        <Hr />
         <Item>
           <HistoryIcon />
           History
