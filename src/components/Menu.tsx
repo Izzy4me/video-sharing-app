@@ -18,12 +18,14 @@ import AnnouncementIcon from "@mui/icons-material/Announcement";
 import PetsIcon from "@mui/icons-material/Pets";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import LogoImg from "../assets/images/logo.png";
+import { DefaultTheme } from './../styled.d';
 
 const Container = styled.div`
   flex: 1;
-  background-color: #090707;
+  background-color: ${props => props.theme.bg };
+  // background-color: ${({ theme: DefaultTheme }) => theme.bg};
   height: 100vh;
-  color: white;
+  color: ${({ theme: DefaultTheme }) => theme.text};
   font-size: 1em;
   position: sticky;
   top: 0;
@@ -56,7 +58,7 @@ const Item = styled.div`
 
 const Hr = styled.hr`
   margin: 1rem 0rem;
-  border: 0.5px solid grayscale;
+  // border: 0.5px solid ${({ theme: DefaultTheme }) => theme.soft};
 `;
 
 const Login = styled.div``;
@@ -74,7 +76,7 @@ const Button = styled.button`
   gap: 0.5em;
 `;
 
-const Menu = () => {
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
@@ -134,7 +136,7 @@ const Menu = () => {
           <AnnouncementIcon />
           Report issue
         </Item>
-        <Item>
+        <Item onClick={() => {setDarkMode(!darkMode)}}>
           <LightModeIcon />
           Light Mode
         </Item>

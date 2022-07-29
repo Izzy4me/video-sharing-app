@@ -16,6 +16,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "includes": ["styled-styled-components.d.ts"],
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
