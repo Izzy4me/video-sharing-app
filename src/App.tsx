@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 const Main = styled.div`
   flex: 7;
-  backgroud-color: black;
+  background-color: black;
 `;
 const Wrapper = styled.div``;
 
@@ -19,14 +19,12 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
-    <ThemeProvider theme={darkMode ? darkMode : lightTheme}>
-        <Container>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <Container>
         <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
           <Navbar />
-          <Wrapper>
-            There will be some videos
-          </Wrapper>
+          <Wrapper>There will be some videos</Wrapper>
         </Main>
       </Container>
     </ThemeProvider>

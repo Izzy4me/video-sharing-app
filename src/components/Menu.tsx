@@ -18,14 +18,13 @@ import AnnouncementIcon from "@mui/icons-material/Announcement";
 import PetsIcon from "@mui/icons-material/Pets";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import LogoImg from "../assets/images/logo.png";
-import { DefaultTheme } from './../styled.d';
+
 
 const Container = styled.div`
   flex: 1;
   background-color: ${props => props.theme.bg };
-  // background-color: ${({ theme: DefaultTheme }) => theme.bg};
   height: 100vh;
-  color: ${({ theme: DefaultTheme }) => theme.text};
+  color: ${props => props.theme.text};
   font-size: 1em;
   position: sticky;
   top: 0;
@@ -58,7 +57,7 @@ const Item = styled.div`
 
 const Hr = styled.hr`
   margin: 1rem 0rem;
-  // border: 0.5px solid ${({ theme: DefaultTheme }) => theme.soft};
+  border: 0.5px solid ${( props ) => props.theme.soft};
 `;
 
 const Login = styled.div``;
@@ -76,90 +75,100 @@ const Button = styled.button`
   gap: 0.5em;
 `;
 
-const Menu = ({ darkMode, setDarkMode }) => {
-  return (
-    <Container>
-      <Wrapper>
-        <Logo>
-          <Img src={LogoImg} />
-          MyTube
-        </Logo>
-        <Item>
-          <HomeIcon />
-          Home
-        </Item>
-        <Item>
-          <ExploreIcon />
-          Explore
-        </Item>
-        <Item>
-          <SubscriptionsIcon />
-          Subscriptions
-        </Item>
-        <Hr />
-        <Item>
-          <VideoLibraryIcon />
-          Library
-        </Item>
-        <Item>
-          <SlideshowIcon />
-          Your videos
-        </Item>
-        <Item>
-          <WatchLaterIcon />
-          To watch
-        </Item>
-        <Item>
-          <ThumbUpIcon />
-          Liked videos
-        </Item>
-        <Hr />
-        <Login>
-          Sign in to like videos, comment and subscribe.
-          <Button><AccountCircleOutlinedIcon />SIGN IN</Button>
-        </Login>
-        
-        <Hr />
-        <Item>
-          <SettingsIcon />
-          Settings
-        </Item>
-        <Item>
-          <HistoryIcon />
-          History
-        </Item>
-        <Item>
-          <HelpIcon />
-          Help
-        </Item>
-        <Item>
-          <AnnouncementIcon />
-          Report issue
-        </Item>
-        <Item onClick={() => {setDarkMode(!darkMode)}}>
-          <LightModeIcon />
-          Light Mode
-        </Item>
-        <Hr />
-        <Item>
-          <EmojiEventsIcon />
-          Events
-        </Item>
-        <Item>
-          <SportsEsportsIcon />
-          Sport
-        </Item>
-        <Item>
-          <LandscapeIcon />
-          Nature
-        </Item>
-        <Item>
-          <PetsIcon />
-          Animals
-        </Item>
-      </Wrapper>
-    </Container>
-  );
-}
+  interface Props {
+    darkMode: boolean;
+    setDarkMode: (darkMode: boolean) => void;
+  };
+
+  const Menu = (props: Props) => {
+    return (
+      <Container>
+        <Wrapper>
+          <Logo>
+            <Img src={LogoImg} />
+            MyTube
+          </Logo>
+          <Item>
+            <HomeIcon />
+            Home
+          </Item>
+          <Item>
+            <ExploreIcon />
+            Explore
+          </Item>
+          <Item>
+            <SubscriptionsIcon />
+            Subscriptions
+          </Item>
+          <Hr />
+          <Item>
+            <VideoLibraryIcon />
+            Library
+          </Item>
+          <Item>
+            <SlideshowIcon />
+            Your videos
+          </Item>
+          <Item>
+            <WatchLaterIcon />
+            To watch
+          </Item>
+          <Item>
+            <ThumbUpIcon />
+            Liked videos
+          </Item>
+          <Hr />
+          <Login>
+            Sign in to like videos, comment and subscribe.
+            <Button>
+              <AccountCircleOutlinedIcon />
+              SIGN IN
+            </Button>
+          </Login>
+
+          <Hr />
+          <Item>
+            <SettingsIcon />
+            Settings
+          </Item>
+          <Item>
+            <HistoryIcon />
+            History
+          </Item>
+          <Item>
+            <HelpIcon />
+            Help
+          </Item>
+          <Item>
+            <AnnouncementIcon />
+            Report issue
+          </Item>
+          <Item
+            onClick={() => { props.setDarkMode(!props.darkMode) }}
+          >
+            <LightModeIcon />
+            Light Mode
+          </Item>
+          <Hr />
+          <Item>
+            <EmojiEventsIcon />
+            Events
+          </Item>
+          <Item>
+            <SportsEsportsIcon />
+            Sport
+          </Item>
+          <Item>
+            <LandscapeIcon />
+            Nature
+          </Item>
+          <Item>
+            <PetsIcon />
+            Animals
+          </Item>
+        </Wrapper>
+      </Container>
+    );
+  };
 
 export default Menu;
