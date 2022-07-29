@@ -22,7 +22,7 @@ import LogoImg from "../assets/images/logo.png";
 
 const Container = styled.div`
   flex: 1;
-  background-color: ${props => props.theme.bg };
+  background-color: ${props => props.theme.bgLighter};
   height: 100vh;
   color: ${props => props.theme.text};
   font-size: 1em;

@@ -7,12 +7,14 @@ import { darkTheme, lightTheme } from './utils/theme';
 
 const Container = styled.div`
   display: flex;
-  background-color: white;
+  background-color: ${({ theme }) => theme.bgLighter};
 `;
+
 const Main = styled.div`
   flex: 7;
-  background-color: black;
+  background-color: ${({ theme }) => theme.bg};
 `;
+
 const Wrapper = styled.div``;
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
         <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
           <Navbar />
-          <Wrapper>There will be some videos</Wrapper>
+          <Wrapper>
+            There will be some videos
+          </Wrapper>
         </Main>
       </Container>
     </ThemeProvider>
