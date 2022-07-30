@@ -18,6 +18,7 @@ import AnnouncementIcon from "@mui/icons-material/Announcement";
 import PetsIcon from "@mui/icons-material/Pets";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import LogoImg from "../assets/images/logo.png";
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -84,10 +85,12 @@ const Button = styled.button`
     return (
       <Container>
         <Wrapper>
-          <Logo>
-            <Img src={LogoImg} />
-            MyTube
-          </Logo>
+          <Link to="/video" style={{textDecoration: "none", color: "inherit" }}>
+            <Logo>
+              <Img src={LogoImg} />
+              MyTube
+            </Logo>
+          </Link>
           <Item>
             <HomeIcon />
             Home
@@ -144,10 +147,12 @@ const Button = styled.button`
             Report issue
           </Item>
           <Item
-            onClick={() => { props.setDarkMode(!props.darkMode) }}
+            onClick={() => {
+              props.setDarkMode(!props.darkMode);
+            }}
           >
             <LightModeIcon />
-            Light Mode
+            {props.darkMode ? "Light Mode" : "Dark Mode"}
           </Item>
           <Hr />
           <Item>

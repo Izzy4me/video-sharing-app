@@ -18,7 +18,9 @@ const Main = styled.div`
   background-color: ${({ theme }) => theme.bg};
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  padding: 1rem 2rem;
+`;
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
