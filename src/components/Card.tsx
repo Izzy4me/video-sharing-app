@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
-const AVATAR_PLAHOLDER_LINK = 'https://avatars.githubusercontent.com/u/10883965?s=96&v=4';
-const VIDEO_PLACEHOLDER_LINK = "http://ajaypatkar.com/wp-content/uploads/2018/10/video-1024x576.jpg";
+import { AVATAR_PLAHOLDER_LINK, VIDEO_PLACEHOLDER_LINK } from "../assets";
 
 const Container = styled.div`
-  width: 360px;
-  margin-bottom: 45px;
+  width: 350px;
+  margin-bottom: 2rem;
   cursor: pointer;
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 202px;
-  background-color: yellowgreen;
 `;
 
 const Details = styled.div`
@@ -40,7 +37,7 @@ const ChannelName = styled.h2`
   font-size: 0.875rem;
   font-weight: 400;
   color: ${({ theme }) => theme.text};
-  margin: 9px 0px;
+  margin: 8px 0px 6px 0px;
 `;
 
 const Info = styled.div`
