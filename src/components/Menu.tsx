@@ -152,7 +152,7 @@ const Button = styled.button`
             }}
           >
             <LightModeIcon />
-            {props.darkMode ? "Light Mode" : "Dark Mode"}
+            {props.darkMode ? "Light" : "Dark"} Mode
           </Item>
           <Hr />
           <Item>

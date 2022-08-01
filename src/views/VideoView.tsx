@@ -4,6 +4,7 @@ import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import { AVATAR_PLAHOLDER_LINK, YT_VIDEO_IFRAME } from "../assets";
+import Comments from "../components/Comments";
 
 const Container = styled.div`
   display: flex;
@@ -100,7 +101,7 @@ const Subscribe = styled.button`
 
 const Hr = styled.hr`
   margin: 1rem 0;
-  border: 0.5px solid ${ ({theme}) => theme.soft };
+  border: 0.5px solid ${({ theme }) => theme.textSoft};
 `;
 
 
@@ -153,6 +154,8 @@ const VideoView = () => {
           </ChannelInfo>
           <Subscribe>SUBSCRIBE</Subscribe>
         </Channel>
+        <Hr />
+        <Comments />
       </Content>
       <Recommendation>Reccomendation placeholder</Recommendation>
     </Container>
