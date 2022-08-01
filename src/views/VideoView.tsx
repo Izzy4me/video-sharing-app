@@ -5,6 +5,7 @@ import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import { AVATAR_PLAHOLDER_LINK, YT_VIDEO_IFRAME } from "../assets";
 import Comments from "../components/Comments";
+import Card from "../components/Card";
 
 const Container = styled.div`
   display: flex;
@@ -157,7 +158,12 @@ const VideoView = () => {
         <Hr />
         <Comments />
       </Content>
-      <Recommendation>Reccomendation placeholder</Recommendation>
+      <Recommendation>
+        {["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"].map((id: string) => {
+          return <Card key={id} id={id} type="small"/>;
+        })}
+
+      </Recommendation>
     </Container>
   );
 }
