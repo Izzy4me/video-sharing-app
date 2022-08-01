@@ -54,11 +54,14 @@ const Item = styled.div`
   gap: 2.5rem;
   cursor: pointer;
   padding: 0.25rem 0rem;
+  &:hover {
+    background-color: ${(props) => props.theme.softColor};
+  }
 `;
 
 const Hr = styled.hr`
   margin: 1rem 0rem;
-  border: 0.5px solid ${( props ) => props.theme.soft};
+  border: 0.5px solid ${( props ) => props.theme.text};
 `;
 
 const Login = styled.div``;
@@ -85,16 +88,18 @@ const Button = styled.button`
     return (
       <Container>
         <Wrapper>
-          <Link to="/video" style={{textDecoration: "none", color: "inherit" }}>
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
             <Logo>
               <Img src={LogoImg} />
               MyTube
             </Logo>
           </Link>
-          <Item>
-            <HomeIcon />
-            Home
-          </Item>
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            <Item>
+              <HomeIcon />
+              Home
+            </Item>
+          </Link>
           <Item>
             <ExploreIcon />
             Explore
