@@ -7,6 +7,8 @@ import { darkTheme, lightTheme } from './utils/theme';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeView from './views/HomeView';
 import VideoView from './views/VideoView';
+import SignInView from './views/SignInView';
+
 
 const Container = styled.div`
   display: flex;
@@ -36,6 +38,7 @@ function App() {
               <Routes>
                 <Route path="/">
                   <Route index element={<HomeView />} />
+                  <Route path="signin" element={<SignInView />} />
                   <Route path="video">
                     <Route path=":id" element={<VideoView />} />
                   </Route>
